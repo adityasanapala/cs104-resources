@@ -1,0 +1,9 @@
+1. Create the directory structure company/finance/reports using a single command.
+
+2. List all files in /var/log sorted by modification time, showing the newest files first.
+
+3. Change into the reports directory from anywhere on the system using an absolute path.
+
+4. Display the text `System check running...` without adding a new line at the end.
+
+5. Use ps to display all running processes and filter the output to show only processes related to bash.
