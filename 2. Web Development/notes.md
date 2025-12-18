@@ -237,3 +237,688 @@ Example:
 
 HTML is a markup language that structures content on the web. You can create pages with text, images, links, and more using various HTML tags. Once you're familiar with the basic tags, you can start integrating CSS and JavaScript to add styling and interactivity.
 
+# CSS
+
+## **1. What is CSS?**
+
+* **CSS** is a stylesheet language used to describe the look and feel of a web page. It controls layout, colors, fonts, spacing, and more.
+* CSS allows you to separate the structure (HTML) from the style (CSS), which makes maintaining and styling pages easier.
+
+---
+
+## **2. Basic CSS Syntax**
+
+CSS uses **selectors** to target HTML elements and **properties** to apply styles to those elements.
+
+```css
+selector {
+    property: value;
+}
+```
+
+### Example:
+
+```css
+h1 {
+    color: blue;
+    font-size: 24px;
+}
+```
+
+This would change all `<h1>` elements to blue and set their font size to 24px.
+
+---
+
+## **3. How to Include CSS in a Web Page**
+
+There are three main ways to include CSS in an HTML document:
+
+### **a. Inline CSS**
+
+* Directly within an HTML element using the `style` attribute.
+
+```html
+<p style="color: red; font-size: 16px;">This is red text.</p>
+```
+
+### **b. Internal CSS**
+
+* Inside a `<style>` tag within the `<head>` section of the HTML document.
+
+```html
+<head>
+    <style>
+        p {
+            color: green;
+        }
+    </style>
+</head>
+```
+
+### **c. External CSS**
+
+* In a separate `.css` file linked to the HTML file using the `<link>` tag in the `<head>` section.
+
+```html
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+```
+
+Then, the CSS file (`styles.css`) would contain the styles:
+
+```css
+p {
+    color: green;
+}
+```
+
+---
+
+## **4. CSS Selectors**
+
+Selectors define which HTML elements the style rules apply to. Here are the most common ones:
+
+### **a. Element Selector**
+
+* Targets all instances of a specific element (e.g., all `<p>` tags).
+
+```css
+p {
+    font-size: 18px;
+}
+```
+
+### **b. Class Selector**
+
+* Targets all elements with a specific class. A class is prefixed with a `.`.
+
+```css
+.box {
+    border: 1px solid black;
+}
+```
+
+HTML:
+
+```html
+<div class="box">Content inside box</div>
+```
+
+### **c. ID Selector**
+
+* Targets a unique element with a specific `id`. An ID is prefixed with a `#`.
+
+```css
+#header {
+    background-color: blue;
+}
+```
+
+HTML:
+
+```html
+<div id="header">This is the header</div>
+```
+
+### **d. Universal Selector**
+
+* Targets all elements on the page (`*`).
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+}
+```
+
+---
+
+## **5. CSS Properties**
+
+CSS properties control different aspects of how elements are displayed. Here are the main categories of properties:
+
+### **a. Text and Font Properties**
+
+* **color**: Sets the text color.
+* **font-family**: Specifies the font of the text.
+* **font-size**: Adjusts the size of the text.
+* **font-weight**: Controls the thickness of the text (e.g., `normal`, `bold`).
+* **line-height**: Controls the space between lines of text.
+* **text-align**: Aligns text (e.g., `left`, `center`, `right`).
+
+Example:
+
+```css
+p {
+    color: darkblue;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+```
+
+### **b. Box Model (Layout) Properties**
+
+The box model defines the layout of elements and includes padding, borders, margins, and the content area.
+
+* **width**: Defines the width of an element.
+* **height**: Defines the height of an element.
+* **padding**: Space inside an element, between content and the border.
+* **border**: The border surrounding the element.
+* **margin**: Space outside an element, between it and other elements.
+
+Example:
+
+```css
+div {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 10px;
+}
+```
+
+### **c. Background Properties**
+
+* **background-color**: Sets the background color.
+* **background-image**: Adds an image as a background.
+* **background-size**: Controls the size of the background image (e.g., `cover`, `contain`).
+
+Example:
+
+```css
+body {
+    background-color: #f0f0f0;
+}
+
+div {
+    background-image: url('background.jpg');
+    background-size: cover;
+}
+```
+
+---
+
+## **6. CSS Positioning**
+
+CSS positioning properties allow you to control the position of elements.
+
+### **a. Static (default)**:
+
+Elements are positioned based on the normal flow of the document.
+
+### **b. Relative**:
+
+Positioned relative to its normal position.
+
+```css
+div {
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+```
+
+### **c. Absolute**:
+
+Positioned relative to the nearest positioned ancestor (not static).
+
+```css
+div {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+```
+
+### **d. Fixed**:
+
+Positioned relative to the viewport, so it stays in place when scrolling.
+
+```css
+div {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+```
+
+---
+
+## **7. CSS Flexbox**
+
+Flexbox is a layout model that provides an easy way to align and distribute space among items in a container.
+
+```css
+.container {
+    display: flex;
+    justify-content: space-between; /* Align items with space between them */
+    align-items: center; /* Vertically align items */
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+}
+```
+
+---
+
+## **8. CSS Grid**
+
+CSS Grid Layout is a two-dimensional layout system that allows you to create complex web designs more easily.
+
+```css
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 10px; /* Adds space between grid items */
+}
+
+.item {
+    background-color: lightcoral;
+}
+```
+
+---
+
+## **9. CSS Transitions and Animations**
+
+CSS allows you to animate changes in properties.
+
+### **a. Transitions**
+
+Transitions allow property changes to occur over a specified duration.
+
+```css
+button {
+    background-color: blue;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: red;
+}
+```
+
+### **b. Animations**
+
+Animations allow more complex keyframe-based animations.
+
+```css
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100px);
+    }
+}
+
+div {
+    animation: move 2s infinite alternate;
+}
+```
+
+---
+
+## **10. Responsive Design**
+
+Responsive web design ensures that your site looks good on all screen sizes (desktops, tablets, and phones).
+
+### **a. Media Queries**
+
+Media queries allow you to apply different styles depending on the device’s screen size.
+
+```css
+@media (max-width: 768px) {
+    body {
+        background-color: lightblue;
+    }
+}
+```
+
+This will change the background color to `lightblue` if the screen width is 768px or smaller.
+
+---
+
+## **11. Conclusion**
+
+CSS is a powerful tool that lets you control how HTML elements look and behave. With CSS, you can design complex layouts, add animations, and ensure your website looks good on any device. By learning about selectors, properties, and advanced layout techniques (like Flexbox and Grid), you can build modern, stylish websites.
+
+# JS
+
+
+## **1. What is JavaScript?**
+
+* **JavaScript (JS)** is a programming language used to make web pages **interactive**.
+* It can:
+
+  * Respond to user actions (clicks, typing)
+  * Change HTML content and CSS styles
+  * Validate forms
+  * Create animations and dynamic behavior
+* JavaScript runs in the **browser**.
+
+---
+
+## **2. How to Add JavaScript to HTML**
+
+### **a. Inline JavaScript**
+
+* Written directly inside an HTML element (not recommended for large projects).
+
+```html
+<button onclick="alert('Hello!')">Click Me</button>
+```
+
+---
+
+### **b. Internal JavaScript**
+
+* Written inside a `<script>` tag in the HTML file.
+
+```html
+<script>
+    alert("Hello from JavaScript!");
+</script>
+```
+
+---
+
+### **c. External JavaScript (Recommended)**
+
+* Written in a separate `.js` file and linked to HTML.
+
+```html
+<script src="script.js"></script>
+```
+
+**script.js**
+
+```javascript
+alert("Hello from external JS!");
+```
+
+---
+
+## **3. JavaScript Basics**
+
+### **a. Variables**
+
+Used to store data.
+
+```javascript
+let name = "John";     // Can be changed
+const age = 20;       // Cannot be changed
+var city = "London";  // Older way (avoid using)
+```
+
+---
+
+### **b. Data Types**
+
+Common JavaScript data types:
+
+* **String** → `"Hello"`
+* **Number** → `25`
+* **Boolean** → `true` / `false`
+* **Array** → `[1, 2, 3]`
+* **Object** → `{ name: "John", age: 20 }`
+* **Undefined** → variable with no value
+* **Null** → empty value
+
+Example:
+
+```javascript
+let message = "Hello";
+let score = 100;
+let isLoggedIn = true;
+```
+
+---
+
+## **4. Operators**
+
+### **a. Arithmetic Operators**
+
+```javascript
+let sum = 10 + 5;
+let diff = 10 - 5;
+let product = 10 * 5;
+let quotient = 10 / 5;
+```
+
+### **b. Comparison Operators**
+
+```javascript
+5 == "5"    // true (loose comparison)
+5 === "5"   // false (strict comparison)
+5 != 3
+5 > 3
+```
+
+### **c. Logical Operators**
+
+```javascript
+&&   // AND
+||   // OR
+!    // NOT
+```
+
+---
+
+## **5. Conditional Statements**
+
+Used to make decisions.
+
+### **a. if / else**
+
+```javascript
+let age = 18;
+
+if (age >= 18) {
+    console.log("You are an adult");
+} else {
+    console.log("You are a minor");
+}
+```
+
+---
+
+### **b. switch Statement**
+
+```javascript
+let day = 2;
+
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    default:
+        console.log("Unknown day");
+}
+```
+
+---
+
+## **6. Loops**
+
+Used to repeat code.
+
+### **a. for Loop**
+
+```javascript
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+```
+
+### **b. while Loop**
+
+```javascript
+let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+```
+
+---
+
+## **7. Functions**
+
+Functions are reusable blocks of code.
+
+```javascript
+function greet(name) {
+    return "Hello " + name;
+}
+
+console.log(greet("Alice"));
+```
+
+### **Arrow Function**
+
+```javascript
+const greet = (name) => {
+    return "Hello " + name;
+};
+```
+
+---
+
+## **8. Events**
+
+Events occur when users interact with the page.
+
+Common events:
+
+* `click`
+* `mouseover`
+* `keydown`
+* `submit`
+
+Example:
+
+```html
+<button id="btn">Click Me</button>
+
+<script>
+    document.getElementById("btn").addEventListener("click", function () {
+        alert("Button clicked!");
+    });
+</script>
+```
+
+---
+
+## **9. DOM Manipulation**
+
+The **DOM (Document Object Model)** allows JavaScript to access and modify HTML elements.
+
+### **a. Selecting Elements**
+
+```javascript
+document.getElementById("title");
+document.querySelector(".box");
+document.querySelectorAll("p");
+```
+
+---
+
+### **b. Changing Content**
+
+```javascript
+document.getElementById("title").innerHTML = "New Title";
+```
+
+---
+
+### **c. Changing Styles**
+
+```javascript
+document.getElementById("title").style.color = "red";
+```
+
+---
+
+## **10. Arrays**
+
+Used to store multiple values.
+
+```javascript
+let fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits[0]); // Apple
+fruits.push("Orange"); // Add item
+```
+
+---
+
+## **11. Objects**
+
+Used to store related data.
+
+```javascript
+let person = {
+    name: "John",
+    age: 25,
+    city: "New York"
+};
+
+console.log(person.name);
+```
+
+---
+
+## **12. Form Validation Example**
+
+```html
+<input type="text" id="username">
+<button onclick="check()">Submit</button>
+
+<script>
+function check() {
+    let user = document.getElementById("username").value;
+    if (user === "") {
+        alert("Please enter username");
+    } else {
+        alert("Welcome " + user);
+    }
+}
+</script>
+```
+
+---
+
+## **13. Console**
+
+The console is used for debugging.
+
+```javascript
+console.log("This is a message");
+```
+
+---
+
+## **14. Conclusion**
+
+* HTML = structure
+* CSS = design
+* **JavaScript = behavior**
+
+JavaScript brings your website to life by adding logic, interactivity, and dynamic content.
+
+
+
+
+
+
