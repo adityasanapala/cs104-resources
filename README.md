@@ -1,23 +1,40 @@
 # cs104-resources
 
-cs104 - software systems lab
+This repository contains all the course materials for CS104 – Software Systems Lab, taught by Prof. Kameswari Chebrolu in Spring 2024, including slides, tutorials, lab assignments, and additional resources.
 
-all resources - slides, tutorials, labs, additional stuff and everything else
+## Content Modules
 
-made with huge collaboration.
+To make things easier to follow, the content is divided into the following modules.
 
-# unix, sed, awk, bash
+- [Unix CLI Basics](#unix-cli-basics)
+- [Web Development](#web-development)
+- [Code Management](#code-management)
+- [Advanced CLI](#advanced-cli)
+- [Python Primer](#python-primer)
+- [Developer Tools](#developer-tools)
 
-# web
+## Unix CLI Basics
 
-# gdb
+-  whyunix, how to use, etc
 
-# make
+## Web Development
 
-# python
+- html, css, js
 
-# latex
+## Code Management
 
-# spreadsheet
+- gdb
+- make
+- git
 
-# doxygen
+## Advanced CLI
+
+- , sed, awk, bash
+
+## Python Primer
+
+## Developer Tools
+
+- latex
+- spreadsheet
+- doxygen
